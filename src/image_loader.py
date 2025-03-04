@@ -1,10 +1,12 @@
 import cv2
-import numpy as np
 import os
 import matplotlib.pyplot as plt
-from PIL import Image
 
 def load_image(path):
+    """
+    Loads an image from the given file path,
+    converts it from BGR to RGB format, and returns the image.
+    """
     img = cv2.imread(path)
     if img is None:
         print(f"File {path} is not found.")
@@ -14,6 +16,9 @@ def load_image(path):
 
 
 def show_image(img, title='Image'):
+    """
+    Displays the given image using Matplotlib with an optional title.
+    """
     plt.imshow(img)
     plt.title(title)
     # plt.axes('off')
@@ -21,6 +26,10 @@ def show_image(img, title='Image'):
 
 
 def load_images_from_dir(dir_path):
+    """
+    Loads all images from the specified directory, 
+    converts them to RGB format, and returns them as a list of tuples.
+    """
     images = []
 
     if not os.path.exists(dir_path):
