@@ -1,6 +1,7 @@
 import cv2
 import os
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 def load_image(path):
     """
@@ -36,7 +37,10 @@ def load_images_from_dir(dir_path):
         print(f"Error: Directory {dir_path} does not exist.")
         return images
     
-    for filename in os.listdir(dir_path):
+    file_list = os.listdir(dir_path)
+    for filename in tqdm(file_list, desc="Loading images"):
+
+    # for filename in os.listdir(dir_path):
         path = os.path.join(dir_path, filename)
         try:
             img = load_image(path)
