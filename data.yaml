@@ -1,0 +1,5 @@
+names:
+- face
+nc: 1
+train: /content/drive/MyDrive/FaceTrackAI/data/images/train
+val: /content/drive/MyDrive/FaceTrackAI/data/images/val
